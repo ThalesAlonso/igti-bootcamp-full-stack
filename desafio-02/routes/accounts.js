@@ -5,7 +5,7 @@ const {readFile, writeFile} = fs;
 
 const router = express.Router();
 
-// endpoint cadastra a grade. 
+// Este endpoint cadastra a grade. 
 router.post("/", async (req, res) => {
   try {
     let account = req.body;
@@ -23,7 +23,7 @@ router.post("/", async (req, res) => {
 
 });
 
-// endpoint lista todos as grades.
+//este endpoint lista todos as grades.
 router.get("/listaGrades", async (req, res) => {
   try{
     const data = JSON.parse(await readFile(global.fileName));
@@ -35,7 +35,7 @@ router.get("/listaGrades", async (req, res) => {
 });
 
 
-//  endpoint lista as grades por id passado como parametro
+// este endpoint lista as grades por id passado como parametro
 router.get("/:id", async (req, res) => {
   try{
     const data = JSON.parse(await readFile(global.fileName));
@@ -47,7 +47,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// endpoint deleta uma grade com id passado por parametro 
+//este endpoint deleta uma grade com id passado por parametro 
 router.delete("/:id", async (req, res) => {
   try{
     const data = JSON.parse(await readFile(global.fileName));
@@ -62,7 +62,7 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-// endpoint altera uma grade com id passado por parametro e verifica
+//este endpoint altera uma grade com id passado por parametro e verifica
 //se o id da grade existe, se não existir retorna erro 
 router.put("/", async (req, res) => {
   try{
